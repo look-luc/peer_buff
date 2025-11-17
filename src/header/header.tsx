@@ -4,10 +4,10 @@ import './header.css'
 function Header(){
     return(
         <div className='header'>
-            <button>
+            <button className='buttons'>
                 Home
             </button>
-            <button className='button'>
+            <button className='buttons'>
                 Mission
             </button>
         </div>

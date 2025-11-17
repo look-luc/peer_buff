@@ -3,12 +3,14 @@
   justify-content: center;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.home{
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 90%;
+  height: fit-content;
+  padding: 5px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: antiquewhite;
 }
