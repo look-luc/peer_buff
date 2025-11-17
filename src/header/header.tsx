@@ -4,9 +4,12 @@ import './header.css'
 function Header(){
     return(
         <div className='header'>
-            <button
-                onClick={}
-            ></button>
+            <button>
+                Home
+            </button>
+            <button className='button'>
+                Mission
+            </button>
         </div>
     )
 }
