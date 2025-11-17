@@ -6,7 +6,9 @@ function Mission(){
     return(
         <div>
             <Header/>
-            test
+            <div className='mission'>
+
+            </div>
         </div>
     )
 }
