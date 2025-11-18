@@ -1,7 +1,7 @@
 .header{
-    max-width: 1200px;
-    margin-left: 5% auto;
-    margin-right: 5% auto;
+    max-width: 1300px;
+    margin-left: 2.5% auto;
+    margin-right: 2.5% auto;
     position: absolute;
     display: flex;
     border: none;
@@ -14,7 +14,7 @@
     height: 10%;
     align-items: center;
     margin: 5px;
-    gap: 50px;
+    gap: 100px;
 }
 .nav-bar{
     margin: 0;
