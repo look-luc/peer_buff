@@ -15,6 +15,8 @@ root.render(
       <Routes>
         <Route path='/' element={<App/>} />
         <Route path='/Mission' element={<Mission/>}/>
+        <Route path='/Contact'/>
+        <Route path='Acknowledgement'/>
       </Routes>
     </HashRouter>
   </React.StrictMode>
