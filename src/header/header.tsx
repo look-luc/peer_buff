@@ -33,6 +33,26 @@ function Header(){
                 >
                     Mission
                 </button>
+                <button
+                    className='buttons'
+                    onClick={
+                        ()=>{
+                            navigate("/Acknowledgement")
+                        }
+                    }
+                >
+                    Acknowledgement
+                </button>
+                <button
+                    className='buttons'
+                    onClick={
+                        ()=>{
+                            navigate('/Contact')
+                        }
+                    }
+                >
+                    Contact
+                </button>
             </div>
         </div>
     )

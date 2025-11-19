@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import Mission from './mission/mission';
+import Mission from './content/mission';
+import Contact from './content/contact';
+import Acknowledgement from './content/Acknowledgement';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,8 +17,8 @@ root.render(
       <Routes>
         <Route path='/' element={<App/>} />
         <Route path='/Mission' element={<Mission/>}/>
-        <Route path='/Contact'/>
-        <Route path='Acknowledgement'/>
+        <Route path='/Contact' element={<Contact/>}/>
+        <Route path='/Acknowledgement' element={<Acknowledgement/>}/>
       </Routes>
     </HashRouter>
   </React.StrictMode>
