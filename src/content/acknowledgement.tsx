@@ -1,9 +1,9 @@
 import './acknowledgement.css'
 import React from 'react';
 
-function Acknowledgement(){
+function Acknowledges(){
     return(
         <div></div>
     )
 }
-export default Acknowledgement
+export default Acknowledges
