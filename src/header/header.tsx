@@ -8,21 +8,19 @@ function Header(){
     return(
         <div className='header'>
             <div className='nav-bar'>
-                <h1>
-                    Peer Buff
-                </h1>
-            </div>
-            <div className='button-cont'>
                 <button 
-                    className='buttons'
+                    className='to_home' 
                     onClick={
                         ()=>{
-                            navigate("/")
+                            navigate('/')
                         }
-                    }
-                >
-                    Home
+                    }>
+                    <h1>
+                        Peer Buff
+                    </h1>
                 </button>
+            </div>
+            <div className='button-cont'>
                 <button
                     className='buttons'
                     onClick={

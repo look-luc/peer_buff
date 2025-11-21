@@ -21,5 +21,7 @@
 }
 
 .mission_statement{
+    text-align: justify;
     font-size: larger;
+    padding: 2px;
 }
