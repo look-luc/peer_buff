@@ -45,11 +45,11 @@ function Header(){
                     className='buttons'
                     onClick={
                         ()=>{
-                            navigate('/Contact')
+                            navigate('/Our Team')
                         }
                     }
                 >
-                    Contact
+                    Our Team
                 </button>
             </div>
         </div>

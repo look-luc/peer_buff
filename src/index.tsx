@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import Mission from './content/mission';
-import Contact from './content/contact';
+import People from './content/people';
 import Acknowledges from './content/acknowledge';
 
 const root = ReactDOM.createRoot(
@@ -17,7 +17,7 @@ root.render(
       <Routes>
         <Route path='/' element={<App/>} />
         <Route path='/Mission' element={<Mission/>}/>
-        <Route path='/Contact' element={<Contact/>}/>
+        <Route path='/Our Team' element={<People/>}/>
         <Route path='/Acknowledgement' element={<Acknowledges/>}/>
       </Routes>
     </HashRouter>
