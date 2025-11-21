@@ -17,24 +17,35 @@
     background-color: rgba(250, 235, 215, 0.5);
 }
 
-.contact-p{
+.contact-info{
+    font-size: larger;
+}
+
+.contact-details{
     display: flex;
+    text-align: left;
     align-items: center;
     gap: 20px;
-    font-size: larger;
-    padding: 2px;
+    margin: 0 auto; 
+    width: fit-content;
+    padding: 10px;
 }
 
 .image{
     width: 15%;
     height: 15%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .name{
     padding: 2px;
     text-decoration: underline;
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
 .description{
-    
+    font-size: large;
+    margin: 0;
 }
