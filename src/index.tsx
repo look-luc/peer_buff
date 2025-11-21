@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import Mission from './content/mission';
 import Contact from './content/contact';
-import Acknowledges from './content/acknowledgement';
+import Acknowledges from './content/acknowledge';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
