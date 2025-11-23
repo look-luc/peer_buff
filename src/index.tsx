@@ -7,6 +7,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import Mission from './content/mission';
 import People from './content/people';
 import Acknowledges from './content/acknowledge';
+import Contact from './content/contact';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,6 +20,7 @@ root.render(
         <Route path='/Mission' element={<Mission/>}/>
         <Route path='/Our Team' element={<People/>}/>
         <Route path='/Acknowledgement' element={<Acknowledges/>}/>
+        <Route path='Contact' element={<Contact/>}/>
       </Routes>
     </HashRouter>
   </React.StrictMode>

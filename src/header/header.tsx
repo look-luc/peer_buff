@@ -50,6 +50,16 @@ function Header(){
                 >
                     Our Team
                 </button>
+                <button
+                    className='buttons'
+                    onClick={
+                        ()=>{
+                            navigate('/Contact')
+                        }
+                    }
+                >
+                    Contact
+                </button>
             </div>
         </div>
     )
