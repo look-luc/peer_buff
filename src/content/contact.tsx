@@ -10,7 +10,7 @@ function Contact(){
                     Contact Us
                 </h1>
                 <p className='statement'>
-                    If you want to contact us, you can call us at [placeholder phone number]
+                    If you want to contact us, you can call us at [placeholder phone number] with any questions.
                 </p>
             </div>
         </div>
