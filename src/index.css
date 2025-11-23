@@ -2,8 +2,14 @@ html, #root {
   height: 100%;
 }
 
+@keyframes colorShift {
+  from {background-color: #5CB6F9;}
+  to {background-color: #8C86EE;}
+}
+
 body {
-  background: linear-gradient(45deg,#5CB6F9,#8C86EE);
+  background-color: #5CB6F9;
+  animation: colorShift 5s ease-in-out infinite alternate;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
