@@ -1,4 +1,3 @@
-import React from 'react';
 import './header.css'
 import { useNavigate, useLocation } from "react-router";
 
@@ -9,7 +8,7 @@ function Header(){
         <div className='header'>
             <div className='nav-bar'>
                 <button 
-                    className='to_home' 
+                    className='to_home'
                     onClick={
                         ()=>{
                             navigate('/')
