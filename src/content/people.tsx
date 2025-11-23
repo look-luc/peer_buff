@@ -19,7 +19,7 @@ function People(){
                                 Luc De Nardi
                             </h3>
                             <p className='description'>
-                                A Computational Linguistic master's student at CU Boulder.  Origanly from Newark Delaware.  I believe that having someone that has gone through their own mental health struggles to talk to can help tramendantly.  If you have any questions about our volunteering opportunities or general questions about what we do, you can email me at luc.denardi@colorado.edu
+                                A Computational Linguistic master's student at CU Boulder.  Originally from Newark Delaware.  I believe that having someone that has gone through their own mental health struggles to talk to can help tramendantly.  If you have any questions about our volunteering opportunities or general questions about what we do, you can email me at luc.denardi@colorado.edu
                             </p>
                         </div>
                     </div>
