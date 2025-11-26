@@ -16,6 +16,19 @@
     margin: 5px;
     gap: 100px;
 }
+
+.to_home{
+    background: none;
+    background-color: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+.to_home:hover{
+    text-decoration: underline;
+}
+
 .nav-bar{
     margin: 0;
     justify-content: center;

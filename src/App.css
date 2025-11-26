@@ -19,3 +19,9 @@
   margin-right: auto;
   background-color: rgba(250, 235, 215, 0.5);;
 }
+
+.statement{
+  text-align: justify;
+  font-size: larger;
+  padding: 2px;
+}

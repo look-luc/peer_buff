@@ -1,4 +1,3 @@
-import React from 'react';
 import './header.css'
 import { useNavigate, useLocation } from "react-router";
 
@@ -8,21 +7,19 @@ function Header(){
     return(
         <div className='header'>
             <div className='nav-bar'>
-                <h1>
-                    Peer Buff
-                </h1>
-            </div>
-            <div className='button-cont'>
                 <button 
-                    className='buttons'
+                    className='to_home'
                     onClick={
                         ()=>{
-                            navigate("/")
+                            navigate('/')
                         }
-                    }
-                >
-                    Home
+                    }>
+                    <h1>
+                        Peer Buff
+                    </h1>
                 </button>
+            </div>
+            <div className='button-cont'>
                 <button
                     className='buttons'
                     onClick={
@@ -32,6 +29,36 @@ function Header(){
                     }
                 >
                     Mission
+                </button>
+                <button
+                    className='buttons'
+                    onClick={
+                        ()=>{
+                            navigate("/Acknowledgement")
+                        }
+                    }
+                >
+                    Acknowledgement
+                </button>
+                <button
+                    className='buttons'
+                    onClick={
+                        ()=>{
+                            navigate('/Our Team')
+                        }
+                    }
+                >
+                    Our Team
+                </button>
+                <button
+                    className='buttons'
+                    onClick={
+                        ()=>{
+                            navigate('/Contact')
+                        }
+                    }
+                >
+                    Contact
                 </button>
             </div>
         </div>
