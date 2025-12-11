@@ -6,9 +6,18 @@ function Join(){
     return(
         <div className='wrapper'>
             <Header/>
-            <h1>
-                If you want to join our team, please email Luc De Nardi at luc.denardi@colorado.edu
-            </h1>
+            <div className='join'>
+                <h1>
+                    Join Our Team
+                </h1>
+                <p className='join-details'>
+                    If you are interested in becoming a Buff Peer Volunteer, applications will be coming soon. 
+                </p>
+                <p className='join-details'>
+                    Otherwise with questions or interest, please email Luc De Nardi at luc.denardi@colorado.edu
+                </p>
+            </div>
+            
         </div>
     )
 }
