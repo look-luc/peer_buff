@@ -1,53 +1,48 @@
-# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
+name: Deploy to GitHub Pages
 
 on:
     push:
         branches: [main]
 
 jobs:
-    build:
+    build-and-deploy:
         runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [16.x]
-                # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
         steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js 16.x
               uses: actions/setup-node@v4
               with:
-                  node-version: ${{ matrix.node-version }}
+                  node-version: 16.x
                   cache: "npm"
+
+            # 1. Update homepage in package.json (Optional, but good practice)
+            # This step is often unnecessary if you use relative paths, but we'll keep it for robustness.
             - id: get-repo-values
               run: |
                   url=https://$(echo "${{github.repository}}" | sed "s/\//.github.io\//")
                   echo "url=$url" >> $GITHUB_OUTPUT
-            - name: Update package.json homepage
+            - name: Set homepage in package.json
               uses: jossef/action-set-json-field@v1
               with:
                   file: package.json
                   field: homepage
                   value: ${{ steps.get-repo-values.outputs.url }}
-            - run: npm ci
-            - run: npm run test -- --coverage |& tee ./public/test_report.txt
-            - run: echo "<html><head><meta http-equiv='refresh' content='0; URL=${{github.server_url}}/${{github.repository}}' /></head><body>Redirecting to repository</body></html>" > ./public/github.html
-            - run: npm run build --if-present
 
-            - name: Setup SSH
+            # 2. Install dependencies and run build
+            - name: Install dependencies and build site
               run: |
-                mkdir -p ~/.ssh
-                echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-                chmod 600 ~/.ssh/id_rsa
-                ssh-keyscan github.com >> ~/.ssh/known_hosts
-            
-            - name: Deploy
-              run: |
-                git config --global user.name "github-actions[bot]"
-                git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                git remote set-url origin git@github.com:${{ github.repository }}.git
-                npm run deploy
+                  npm ci
+                  npm run build # This creates the 'build' folder
+
+            # 3. Use the dedicated GitHub Pages Action to deploy the 'build' folder
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v4
+              with:
+                  # This token is automatically provided by GitHub Actions
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  # Source directory to deploy (React's default)
+                  publish_dir: ./build
+                  # Branch to push the static files to (GitHub Pages standard)
+                  publish_branch: gh-pages
