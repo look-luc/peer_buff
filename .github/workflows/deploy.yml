@@ -29,7 +29,7 @@ jobs:
 
       # ... steps remain the same up to 'Build Production Site'
       - name: Build Production Site
-        run: npm run build 
+        run: CI=false npm run build 
 
       - name: Deploy to GitHub Pages (Peaceiris Action)
         uses: peaceiris/actions-gh-pages@v4
