@@ -10,7 +10,8 @@ function Contact(){
                     Contact Us
                 </h1>
                 <p className='statement'>
-                    If you want to contact us, you can call us at [placeholder phone number] with any questions.
+                    If you want to contact us, you can email Luc De Nardi at luc.denardi@gmail.com with any 
+                    questions.
                 </p>
             </div>
         </div>
