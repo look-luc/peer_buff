@@ -40,6 +40,16 @@ function Header(){
                 >
                     Acknowledgement
                 </button>
+                <button 
+                    className='buttons'
+                    onClick={
+                        ()=>{
+                            navigate('/Join our team')
+                        }
+                    }
+                >
+                    Join our team
+                </button>
                 <button
                     className='buttons'
                     onClick={
