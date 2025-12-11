@@ -27,18 +27,16 @@ jobs:
         # 'npm ci' installs dependencies based on package-lock.json
         run: npm ci 
 
+      # ... steps remain the same up to 'Build Production Site'
       - name: Build Production Site
-        # Runs the 'build' script defined in package.json (usually 'react-scripts build')
         run: npm run build 
 
-      - name: Deploy to GitHub Pages
-        # Uses the JamesIves action to automatically commit and push the build folder 
-        # to the gh-pages branch, which GitHub Pages will serve.
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy to GitHub Pages (Peaceiris Action)
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          # This token is automatically provided by GitHub Actions (and given write permission above)
-          token: ${{ secrets.GITHUB_TOKEN }} 
-          # The branch that will host the built files
-          branch: gh-pages 
-          # The directory containing the static files created by the build step
-          folder: build
+          # This token is automatically provided and has 'write' access
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # The directory to deploy
+          publish_dir: ./build
+          # The branch to push to
+          publish_branch: gh-pages
