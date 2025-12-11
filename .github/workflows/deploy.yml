@@ -1,43 +1,32 @@
-name: Deploy React App to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
-    push:
-        branches: [main]
+  push:
+    branches:
+      - main # Replace with your main branch name
 
 jobs:
-    build-and-deploy:
-        # Run the job on the latest Ubuntu environment
-        runs-on: ubuntu-latest
-        
-        steps:
-            # 1. Checkout the repository code
-            - name: Checkout Repository
-              uses: actions/checkout@v4
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-            # 2. Setup Node.js (matching your requirement for version 16.x)
-            - name: Setup Node.js 16.x
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 16.x
-                  cache: "npm" # Caches node_modules for faster builds
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-            # 3. Install dependencies and build the site
-            - name: Install dependencies and build site
-              # The 'npm run build' command here will create the 'build' folder 
-              # and correctly configure the paths because you added the 'homepage' field
-              # to package.json.
-              run: |
-                  npm ci 
-                  npm run build
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20" # Or a compatible version
+          cache: npm
 
-            # 4. Deploy the built site to the gh-pages branch
-            - name: Deploy to GitHub Pages
-              # This action handles pushing the 'build' folder contents 
-              # to the 'gh-pages' branch using the built-in GITHUB_TOKEN.
-              uses: peaceiris/actions-gh-pages@v4
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  # The directory created by 'npm run build'
-                  publish_dir: ./build
-                  # The branch that GitHub Pages uses for serving static files
-                  publish_branch: gh-pages
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.7.3 # Or the latest version
+        with:
+          branch: gh-pages
+          folder: build # Or your build output folder
