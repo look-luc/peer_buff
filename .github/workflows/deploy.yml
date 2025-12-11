@@ -1,48 +1,44 @@
-name: Deploy to GitHub Pages
+name: Deploy React App to GitHub Pages
 
 on:
+    # Trigger the workflow on pushes to the 'main' branch
     push:
         branches: [main]
 
 jobs:
     build-and-deploy:
+        # Run the job on the latest Ubuntu environment
         runs-on: ubuntu-latest
+        
         steps:
+            # 1. Checkout the repository code
             - name: Checkout Repository
               uses: actions/checkout@v4
 
+            # 2. Setup Node.js (matching your requirement for version 16.x)
             - name: Setup Node.js 16.x
               uses: actions/setup-node@v4
               with:
                   node-version: 16.x
-                  cache: "npm"
+                  cache: "npm" # Caches node_modules for faster builds
 
-            # 1. Update homepage in package.json (Optional, but good practice)
-            # This step is often unnecessary if you use relative paths, but we'll keep it for robustness.
-            - id: get-repo-values
-              run: |
-                  url=https://$(echo "${{github.repository}}" | sed "s/\//.github.io\//")
-                  echo "url=$url" >> $GITHUB_OUTPUT
-            - name: Set homepage in package.json
-              uses: jossef/action-set-json-field@v1
-              with:
-                  file: package.json
-                  field: homepage
-                  value: ${{ steps.get-repo-values.outputs.url }}
-
-            # 2. Install dependencies and run build
+            # 3. Install dependencies and build the site
             - name: Install dependencies and build site
+              # The 'npm run build' command here will create the 'build' folder 
+              # and correctly configure the paths because you added the 'homepage' field
+              # to package.json.
               run: |
-                  npm ci
-                  npm run build # This creates the 'build' folder
+                  npm ci 
+                  npm run build
 
-            # 3. Use the dedicated GitHub Pages Action to deploy the 'build' folder
+            # 4. Deploy the built site to the gh-pages branch
             - name: Deploy to GitHub Pages
+              # This action handles pushing the 'build' folder contents 
+              # to the 'gh-pages' branch using the built-in GITHUB_TOKEN.
               uses: peaceiris/actions-gh-pages@v4
               with:
-                  # This token is automatically provided by GitHub Actions
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  # Source directory to deploy (React's default)
+                  # The directory created by 'npm run build'
                   publish_dir: ./build
-                  # Branch to push the static files to (GitHub Pages standard)
+                  # The branch that GitHub Pages uses for serving static files
                   publish_branch: gh-pages
