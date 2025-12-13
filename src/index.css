@@ -1,10 +1,6 @@
 html, #root {
   height: 100%;
-}
-
-@keyframes colorShift {
-  from {background-color: #5CB6F9;}
-  to {background-color: #8C86EE;}
+  background-color: #5CB6F9;
 }
 
 body {
