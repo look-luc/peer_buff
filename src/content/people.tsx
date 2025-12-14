@@ -18,7 +18,7 @@ function People(){
                         <h3 className='name'>
                             Luc De Nardi
                         </h3>
-                        <h4 style={{ textDecoration: 'underline' }}>Co-Founder</h4>
+                        <h4 style={{ textDecoration: 'underline' }}>Founder</h4>
                         <p className='description'>
                             A Computational Linguistic master's student at CU Boulder.  Originally from Newark Delaware.  I believe that having someone that has gone through their own mental health struggles to talk to can help tramendantly.  If you have any questions about our volunteering opportunities or general questions about what we do, you can email me at luc.denardi@colorado.edu
                         </p>
@@ -31,7 +31,7 @@ function People(){
                         <h3 className='name'>
                             Manodnya K H
                         </h3>
-                        <h4 style={{ textDecoration: 'underline' }}>Co-Founder/Website help</h4>
+                        <h4 style={{ textDecoration: 'underline' }}>Website help</h4>
                         <p className='description'>
                             A Computational Linguistic master's student at CU Boulder. {/*TODO: add rest of description here*/}
                         </p>
