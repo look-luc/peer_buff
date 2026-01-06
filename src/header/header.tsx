@@ -1,5 +1,5 @@
 import './header.css'
-import logo from '../assets/logo/logo.jpg'
+import logo from '../assets/logo/logo.png'
 import { useNavigate, useLocation } from "react-router";
 
 function Header(){
@@ -14,7 +14,6 @@ function Header(){
                         alt='logo'
                         className='logo'
                     />
-                    Peer Buff
                 </button>
             </div>
             <div className='button-cont'>

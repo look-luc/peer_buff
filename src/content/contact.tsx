@@ -10,7 +10,7 @@ function Contact(){
                     Contact Us
                 </h1>
                 <p className='statement'>
-                    If you want to contact us, you can email Luc De Nardi at luc.denardi@gmail.com with any 
+                    If you want to contact us, you can email Luc De Nardi at lude4390@colorado.edu with any 
                     questions.
                 </p>
             </div>

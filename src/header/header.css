@@ -1,5 +1,4 @@
 .header{
-    /* max-width: 1300px; */
     margin-left: 2.5%;
     margin-right: 2.5%;
     position: absolute;
@@ -10,15 +9,16 @@
     background-color: #bbdbfc;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    width: 100%;
+    width: fit-content;
     height: fit-content;
     align-items: center;
     margin: 5px;
-    /* gap: 100px; */
 }
 
 .to_home{
-    padding: 2px,2px;
+    padding: 0;
+    gap: 5px;
+    margin-right: 5px;
     height: fit-content;
     width: fit-content;
     background: none;
@@ -28,22 +28,18 @@
 
 .to_home:hover{
     transform: translateY(-2px);
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
-    background-color: #5f57f5;
 }
 
 .nav-bar{
     width: fit-content;
-    /* margin: 0px; */
-    /* justify-content: center; */
     font-size: larger;
     cursor: pointer;
     border-radius: 5px;
 }
 
 .logo{
-    height: 15%;
-    width: 15%;
+    height: 50%;
+    width: 125px;
 }
 
 .button-cont{
