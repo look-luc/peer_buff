@@ -11,12 +11,10 @@ function Header(){
                 <button className='to_home' onClick={()=>{navigate('/')}}>
                     <img 
                         src={logo} 
-                        alt='yellow sphere background with buffalo and line underneath'
+                        alt='logo'
                         className='logo'
                     />
-                    <h1>
-                        Peer Buff
-                    </h1>
+                    Peer Buff
                 </button>
             </div>
             <div className='button-cont'>
