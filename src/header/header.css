@@ -24,7 +24,9 @@
     padding: 0;
     margin: 0;
     cursor: pointer;
+    display: flex;
 }
+
 .to_home:hover{
     text-decoration: underline;
 }
@@ -32,6 +34,12 @@
 .nav-bar{
     margin: 0;
     justify-content: center;
+    display:block;
+}
+
+.logo{
+    height: 15%;
+    width: 15%;
 }
 
 .button-cont{

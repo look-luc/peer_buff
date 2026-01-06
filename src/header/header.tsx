@@ -1,4 +1,5 @@
 import './header.css'
+import logo from '../assets/logo/logo.jpg'
 import { useNavigate, useLocation } from "react-router";
 
 function Header(){
@@ -7,13 +8,12 @@ function Header(){
     return(
         <div className='header'>
             <div className='nav-bar'>
-                <button 
-                    className='to_home'
-                    onClick={
-                        ()=>{
-                            navigate('/')
-                        }
-                    }>
+                <button className='to_home' onClick={()=>{navigate('/')}}>
+                    <img 
+                        src={logo} 
+                        alt='yellow sphere background with buffalo and line underneath'
+                        className='logo'
+                    />
                     <h1>
                         Peer Buff
                     </h1>
