@@ -1,7 +1,7 @@
 .header{
-    max-width: 1300px;
-    margin-left: 2.5% auto;
-    margin-right: 2.5% auto;
+    /* max-width: 1300px; */
+    margin-left: 2.5%;
+    margin-right: 2.5%;
     position: absolute;
     display: flex;
     border: none;
@@ -14,23 +14,21 @@
     height: fit-content;
     align-items: center;
     margin: 5px;
-    gap: 100px;
+    /* gap: 100px; */
 }
 
 .to_home{
+    padding: 2px,2px;
+    height: fit-content;
     width: fit-content;
     background: none;
-    background-color: none;
-    /* border: none; */
-    padding: 5px;
-    margin: 2px;
     cursor: pointer;
     display: flex;
 }
 
 .to_home:hover{
     transform: translateY(-2px);
-    /* box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
     background-color: #5f57f5;
 }
 
