@@ -6,7 +6,7 @@
     border: none;
     border-radius: 5px;
     padding: 10px 10px;
-    background-color: #bbdbfc;
+    background-color: #4A90E2;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     width: fit-content;
@@ -49,7 +49,7 @@
 
 .buttons{
     cursor: pointer;
-    background-color: #8C86EE;
+    background-color: #aba8f0;
     border-radius: 5px;
     font-size: larger;
     height: fit-content;
