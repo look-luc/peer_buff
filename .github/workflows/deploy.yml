@@ -3,16 +3,17 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main # Triggers the workflow on every push to the main branch
+      - main
 
-# Sets permissions needed to push the built site to the gh-pages branch
 permissions:
-  contents: write
+  contents: read # Default to read-only for safety
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write # Elevate only for this specific job
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -20,23 +21,20 @@ jobs:
       - name: Setup Node.js Environment
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Use a stable, recent Node version
-          cache: 'npm' # Caches npm dependencies for faster builds
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        # 'npm ci' installs dependencies based on package-lock.json
-        run: npm ci 
+        # Added --ignore-scripts to prevent malware from running during install
+        run: npm ci --ignore-scripts
 
-      # ... steps remain the same up to 'Build Production Site'
       - name: Build Production Site
-        run: CI=false npm run build 
+        # Removed CI=false to ensure safety warnings are seen
+        run: npm run build
 
-      - name: Deploy to GitHub Pages (Peaceiris Action)
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          # This token is automatically provided and has 'write' access
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # The directory to deploy
           publish_dir: ./build
-          # The branch to push to
           publish_branch: gh-pages
