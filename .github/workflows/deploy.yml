@@ -5,31 +5,35 @@ on:
     branches:
       - main
 
+# Opt into Node.js 24 for the entire runner environment
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
-  contents: read # Default to read-only for safety
+  contents: read
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Elevate only for this specific job
+      contents: write
     
     steps:
+      # These versions (@v4) are currently compatible with Node 24 
+      # but checking for @v5 later this year is wise.
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js Environment
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24' # Updated from '20' to '24'
           cache: 'npm'
 
       - name: Install dependencies
-        # Added --ignore-scripts to prevent malware from running during install
         run: npm ci --ignore-scripts
 
       - name: Build Production Site
-        # Removed CI=false to ensure safety warnings are seen
         run: npm run build
 
       - name: Deploy to GitHub Pages
