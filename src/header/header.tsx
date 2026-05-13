@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router";
 
 function Header(){
     const navigate = useNavigate();
-    const location = useLocation();
+    const _location = useLocation();
     return(
         <div className='header'>
             <div className='nav-bar'>
