@@ -5,10 +5,6 @@ on:
     branches:
       - main
 
-# Opt into Node.js 24 for the entire runner environment
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 permissions:
   contents: read
 
@@ -19,15 +15,14 @@ jobs:
       contents: write
     
     steps:
-      # These versions (@v4) are currently compatible with Node 24 
-      # but checking for @v5 later this year is wise.
+      # Updated to v5/v6 which natively support Node 24
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5 
 
       - name: Setup Node.js Environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '24' # Updated from '20' to '24'
+          node-version: '24' 
           cache: 'npm'
 
       - name: Install dependencies
@@ -37,7 +32,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        # Peaceiris v5 specifically addresses the Node 24 runtime
+        uses: peaceiris/actions-gh-pages@v5
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
