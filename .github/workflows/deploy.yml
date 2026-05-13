@@ -15,10 +15,11 @@ jobs:
       contents: write
     
     steps:
-      # Updated to v5/v6 which natively support Node 24
+      # actions/checkout@v6 is out and natively supports Node 24
       - name: Checkout Repository
-        uses: actions/checkout@v5 
+        uses: actions/checkout@v6
 
+      # actions/setup-node@v5 handles the Node 24 environment correctly
       - name: Setup Node.js Environment
         uses: actions/setup-node@v5
         with:
@@ -32,8 +33,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        # Peaceiris v5 specifically addresses the Node 24 runtime
-        uses: peaceiris/actions-gh-pages@v5
+        # Reverting to @v4 until the maintainer tags @v5
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
