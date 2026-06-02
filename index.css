@@ -1,14 +1,14 @@
 html,
 #root {
     height: 100%;
-    background-color: #f4f7f9;
-    align-items: center;
+    /*background-color: #f4f8f9;*/
+    background-color: #e1f1fa;
 }
 
 body {
     animation: colorShift 5s ease-in-out infinite alternate;
     margin: 0;
-    align-items: center;
+    display: grid;
     font-family:
         -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
         "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -24,8 +24,8 @@ code {
 }
 
 .headers {
-    /*margin-left: 2.5%;
-    margin-right: 2.5%;*/
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     display: flex;
     border: none;
@@ -37,7 +37,7 @@ code {
     width: fit-content;
     height: fit-content;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 2px;
 }
 
 .to_home {
@@ -90,4 +90,28 @@ code {
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     background-color: #5f57f5;
+}
+
+.home {
+    backdrop-filter: blur(10px);
+    padding: 5px 10px;
+    margin-top: -250px;
+    text-align: center;
+    width: 90%;
+    height: fit-content;
+    padding: 5px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2fdff;
+}
+
+.home h1 {
+    margin-top: 0;
+}
+
+.statement {
+    text-align: justify;
+    font-size: larger;
+    padding: 2px;
 }
