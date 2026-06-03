@@ -94,11 +94,15 @@ code {
     background-color: #5f57f5;
 }
 
-.home {
-    backdrop-filter: blur(10px);
-    padding: 5px 10px;
+.wrapper {
+    display: flex;
+}
+
+.acknowledge {
     margin-top: -20%;
+    backdrop-filter: blur(10px);
     text-align: center;
+    justify-content: center;
     width: 90%;
     height: fit-content;
     padding: 5px;
@@ -108,7 +112,7 @@ code {
     background-color: #f2fdff;
 }
 
-.home h1 {
+.acknowledge h1 {
     margin-top: 0;
 }
 
