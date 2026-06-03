@@ -93,3 +93,32 @@ code {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     background-color: #5f57f5;
 }
+
+.wrapper {
+    display: flex;
+}
+
+.contact {
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    margin-top: -20%;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+    height: fit-content;
+    padding: 5px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2fdff;
+}
+
+.contact h1 {
+    margin-top: 0;
+}
+
+.statement {
+    text-align: justify;
+    font-size: larger;
+    padding: 2px;
+}
