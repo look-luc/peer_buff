@@ -1,0 +1,125 @@
+html,
+#root {
+    height: 100%;
+    /*background-color: #f4f8f9;*/
+    background-color: #e1f1fa;
+}
+
+body {
+    animation: colorShift 5s ease-in-out infinite alternate;
+    margin: 0;
+    display: grid;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+}
+
+code {
+    font-family:
+        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.headers {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #4a90e2;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.to_home {
+    padding: 0;
+    gap: 5px;
+    margin-right: 5px;
+    height: fit-content;
+    width: fit-content;
+    background: none;
+    cursor: pointer;
+    display: flex;
+}
+
+.to_home:hover {
+    transform: translateY(-2px);
+}
+
+.nav-bar {
+    width: fit-content;
+    font-size: larger;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logo {
+    height: 50%;
+    width: 125px;
+    border-radius: 5px;
+}
+
+.button-cont {
+    display: flex;
+    gap: 5px;
+}
+
+.buttons {
+    text-decoration: none;
+    all: unset;
+    cursor: pointer;
+    background-color: #aba8f0;
+    border-radius: 5px;
+    font-size: larger;
+    height: fit-content;
+    width: fit-content;
+    padding: 5px;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: #5f57f5;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.join {
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    margin-top: -13%;
+    text-align: left;
+    justify-content: center;
+    width: 90%;
+    height: fit-content;
+    padding: 5px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2fdff;
+}
+
+.join h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.join-details {
+    text-align: justify;
+    font-size: larger;
+    padding: 2px;
+}
